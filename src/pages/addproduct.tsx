@@ -67,6 +67,8 @@ const AddProduct = () => {
         published,
       };
       console.log(productData);
+      if (typeof window !== 'undefined' && window.localStorage.getItem("token")) {
+      
       const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addproduct`, {
         method: "POST",
         headers: {
@@ -93,6 +95,9 @@ const AddProduct = () => {
       } else {
         const data = await response.json();
         alert(data.message);
+      }}
+      else{
+        alert("localStorage is not available or token is not present. Unable to perform the operation.");
       }
     } catch (error) {
       console.error("An error occurred:", error);

@@ -19,7 +19,7 @@ const ProductDetails = () => {
   const setCartQuantity = useSetRecoilState(cartQuantityState);
   const [addToCart, setAddToCart] = useState(false);
   const user = useRecoilValue(userState);
-  
+
 
   const inputQuantity = useRef();
 
@@ -64,28 +64,39 @@ const ProductDetails = () => {
       ],
     };
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/create-checkout-session`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-        body: JSON.stringify(body),
+    try {
+      // Check if localStorage is available
+      if (typeof window !== 'undefined' && localStorage.getItem("token")) {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/create-checkout-session`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+            body: JSON.stringify(body),
+          }
+        );
+
+        const session = await response.json();
+
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.session.id,
+        });
+
+        if (result.error) {
+          alert(result.error.message);
+        }
+      } else {
+        throw new Error('User token not found or localStorage not available.');
       }
-    );
-
-    const session = await response.json();
-
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.session.id,
-    });
-
-    if (result.error) {
-      alert(result.error.message);
+    } catch (error) {
+      console.error(error);
+      alert('Error occurred while processing payment.');
     }
   };
+
 
   let description = product.description;
   let sentences = description.split(".");
