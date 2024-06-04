@@ -31,7 +31,7 @@ const Signup = () => {
                 return;
             }
 
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/signup`, {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/auth/signup`, {
                 username: username,
                 password: password,
                 email: email,

@@ -121,7 +121,7 @@ const Cart = () => {
                         onClick={async () => {
                           try {
                             const response = await fetch(
-                              `${process.env.NEXT_PUBLIC_SERVER_URL}/deleteFromCart/${product.product._id}`,
+                              `${process.env.NEXT_PUBLIC_SERVER_URL}/cart/${product.product._id}`,
                               {
                                 method: 'DELETE',
                                 headers: {

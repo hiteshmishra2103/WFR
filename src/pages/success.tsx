@@ -12,8 +12,6 @@ const SuccessPage = () => {
             </Link>
         </div>
     )
-
-
 }
 
 

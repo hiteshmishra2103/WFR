@@ -32,7 +32,7 @@ function InitCart() {
     const init = async () => {
       try {
         if (typeof window !== 'undefined') {
-          const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/cartQuantity`, {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/cart/quantity`, {
             headers: {
               'Authorization': 'Bearer ' + localStorage.getItem('token'),
             },

@@ -2,7 +2,7 @@ export default async function addToCartFn(id, price, setCartQuantity, setAddToCa
     try {
         // Check if localStorage is available
         if (typeof window !== 'undefined') {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addToCart`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/cart`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

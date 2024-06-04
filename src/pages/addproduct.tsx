@@ -69,7 +69,7 @@ const AddProduct = () => {
       console.log(productData);
       if (typeof window !== 'undefined' && window.localStorage.getItem("token")) {
       
-      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addproduct`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/products/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -19,15 +19,6 @@ const Login = () => {
     const [adminLoginUrl, setAdminLoginUrl] = useState(false);
     const setUser = useSetRecoilState(userState);
 
-
-    // useEffect(() => {
-    //     if (username && password) {
-    //         setUser({ user: username });
-    //     } else {
-    //         setUser(null);
-    //     }
-    // }, [username, password]);
-
     return (
         <div>
             <div className={formStyles.login}>
@@ -63,7 +54,7 @@ const Login = () => {
                                         fill.classList.remove(`${formStyles.hide}`);
                                     };
                                     console.log(username);
-                                    const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/admin/login`, {
+                                    const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/auth/admin/login`, {
                                         username, password
                                     }, {
                                         headers: {
@@ -107,7 +98,7 @@ const Login = () => {
                                             const fill = document.querySelector(`.${formStyles.requiredFields}`) as HTMLElement;
                                             fill.classList.remove(`${formStyles.hide}`);
                                         };
-                                        const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/login`, {
+                                        const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/auth/login`, {
                                             username, password
                                         }, {
                                             headers: {

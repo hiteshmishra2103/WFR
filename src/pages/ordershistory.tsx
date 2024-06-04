@@ -18,7 +18,7 @@ const OrdersHistory = () => {
         const getOrdersHistory = async () => {
             try {
                 const token = typeof window !== 'undefined' ? localStorage.getItem('token') : '';
-                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/orderHistory`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/orders/history`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
