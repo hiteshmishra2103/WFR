@@ -25,7 +25,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}//products/${id}`)
+      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/products/${id}`)
         .then((res) => res.json())
         .then((product) => setProduct(product));
     }

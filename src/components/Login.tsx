@@ -63,7 +63,7 @@ const Login = () => {
                                         fill.classList.remove(`${formStyles.hide}`);
                                     };
                                     console.log(username);
-                                    const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}//admin/login`, {
+                                    const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/admin/login`, {
                                         username, password
                                     }, {
                                         headers: {
@@ -107,8 +107,7 @@ const Login = () => {
                                             const fill = document.querySelector(`.${formStyles.requiredFields}`) as HTMLElement;
                                             fill.classList.remove(`${formStyles.hide}`);
                                         };
-                                        console.log(username, password);
-                                        const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}//login`, {
+                                        const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/login`, {
                                             username, password
                                         }, {
                                             headers: {

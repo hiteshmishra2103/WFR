@@ -32,7 +32,7 @@ const watch = ({ products }) => {
                         <div className={styles.categoryFilterContainer}>
                             <h3>Category</h3>
                             <select className={styles.filterLink} onChange={async (event) => {
-                                await router.push(`https://wireviewfrontend1.vercel.app//${event.target.value}`);
+                                await router.push(`https://wireviewfrontend1.vercel.app/${event.target.value}`);
                                 setShowFilter(false)
                             }}>
                                 <option value="">Select a Category</option>
@@ -152,7 +152,7 @@ const watch = ({ products }) => {
                                 <div className={styles.categoryFilterContainer}>
                                     <h3>Category</h3>
                                     <select className={styles.filterLink} onChange={(event) => {
-                                        router.push(`https://wireviewfrontend1.vercel.app//${event.target.value}`);
+                                        router.push(`https://wireviewfrontend1.vercel.app/${event.target.value}`);
                                     }}>
                                         <option value="">Select a Category</option>
                                         <option value="/watch">Watch</option>
@@ -302,7 +302,7 @@ const watch = ({ products }) => {
 export default watch
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}//category/computer`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category/computer`);
   const products = await res.json();
   //return the products which are in the category of cellphones
   return {

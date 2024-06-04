@@ -11,6 +11,7 @@ const LoginBtn = () => {
     const [existsError, setExistsError] = useState(false);
     const [isClient, setIsClient] = useState(false);
 
+
     useEffect(() => {
         // Ensuring the code runs only on the client side
         setIsClient(true);
