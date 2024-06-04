@@ -60,11 +60,11 @@ const SearchBar = () => {
             {isFocused && searchInput.length >= 1 && searchResults.length > 0 && (
                 <ul>
                     {searchResults.map((product, index) => (
-                        <Link href={`https://wireviewfrontend1.vercel.app/product/${product._id}`}>
+                        <Link href={`https://wireview.vercel.app/product/${product._id}`}>
                             <li key={index} onClick={() => {
                                 setSearchInput('');
                                 setIsFocused(false);
-                                router.push(`https://wireviewfrontend1.vercel.app/product/${product._id}`);
+                                router.push(`https://wireview.vercel.app/product/${product._id}`);
                             }}>
                                 {/* Display product details here */}
                                 <Image src={product.thumbnail}

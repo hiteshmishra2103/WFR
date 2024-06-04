@@ -7,7 +7,7 @@ const FilterComponent = () => {
                 <div className={styles.categoryFilterContainer}>
                     <h3>Category</h3>
                     <select className={styles.filterLink} onChange={(event) => {
-                        router.push(`https://wireviewfrontend1.vercel.app//${event.target.value}`);
+                        router.push(`https://wireview.vercel.app/${event.target.value}`);
                     }}>
                         <option value="">Select a Category</option>
                         <option value="/watch">Watch</option>
