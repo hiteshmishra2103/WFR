@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "functions": {
+    "/_app": {},
+    "/accessories": {},
+    "/audiovideo": {},
+    "/cellphones": {},
+    "/computer": {},
+    "/": {},
+    "/store": {},
+    "/watch": {}
+  }
+}

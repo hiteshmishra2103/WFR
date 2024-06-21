@@ -1,8 +1,25 @@
 {
-  "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/404": "pages/404.js",
+  "/500": "pages/500.js",
+  "/about": "pages/about.js",
+  "/addproduct": "pages/addproduct.js",
+  "/cancel": "pages/cancel.js",
   "/cart": "pages/cart.js",
+  "/contact": "pages/contact.js",
+  "/dashboard/[user]": "pages/dashboard/[user].js",
+  "/ordershistory": "pages/ordershistory.js",
+  "/privacy": "pages/privacy.js",
+  "/product/[id]": "pages/product/[id].js",
+  "/success": "pages/success.js",
+  "/termsandconditions": "pages/termsandconditions.js",
+  "/_app": "pages/_app.js",
+  "/audiovideo": "pages/audiovideo.js",
+  "/accessories": "pages/accessories.js",
+  "/cellphones": "pages/cellphones.js",
   "/": "pages/index.js",
-  "/product/[id]": "pages/product/[id].js"
+  "/watch": "pages/watch.js",
+  "/store": "pages/store.js",
+  "/computer": "pages/computer.js"
 }
